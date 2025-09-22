@@ -8,7 +8,7 @@
       {% block title %} Victor O | Designer & Developer {% endblock %}
     </title>
     <link rel="icon" href="{% static 'images/favicon.ico' %}" />
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
       rel="stylesheet"
@@ -46,35 +46,40 @@
           </p>
         </div>
         <div class="social-links">
-          <a href="https://github.com/yourusername" target="_blank">
-            <i class="bi bi-github"></i>
-            GitHub
+          {% if contact_info.github_url %}
+          <a href="{{ contact_info.github_url }}" target="_blank">
+            <i class="bi bi-github"></i> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/yourusername/" target="_blank">
-            <i class="bi bi-linkedin"></i>
-            LinkedIn
+          {% endif %} {% if contact_info.linkedin_url %}
+          <a href="{{ contact_info.linkedin_url }}" target="_blank">
+            <i class="bi bi-linkedin"></i> LinkedIn
           </a>
-          <a href="https://wa.me/yourphonenumber" target="_blank">
-            <i class="bi bi-whatsapp"></i>
-            WhatsApp
+          {% endif %} {% if contact_info.whatsapp_number %}
+          <a
+            href="https://wa.me/{{ contact_info.whatsapp_number }}"
+            target="_blank"
+          >
+            <i class="bi bi-whatsapp"></i> WhatsApp
           </a>
-          <a href="https://t.me/yourusername" target="_blank">
-            <i class="bi bi-telegram"></i>
-            Telegram
+          {% endif %} {% if contact_info.telegram_url %}
+          <a href="{{ contact_info.telegram_url }}" target="_blank">
+            <i class="bi bi-telegram"></i> Telegram
           </a>
-          <a href="https://x.com/yourusername" target="_blank">
-            <i class="bi bi-twitter-x"></i>
-            X
+          {% endif %} {% if contact_info.x_url %}
+          <a href="{{ contact_info.x_url }}" target="_blank">
+            <i class="bi bi-twitter-x"></i> X
           </a>
-          <a href="https://instagram.com/yourusername" target="_blank">
-            <i class="bi bi-instagram"></i>
-            Instagram
+          {% endif %} {% if contact_info.instagram_url %}
+          <a href="{{ contact_info.instagram_url }}" target="_blank">
+            <i class="bi bi-instagram"></i> Instagram
           </a>
-          <a href="mailto:youremail@example.com">
-            <i class="bi bi-envelope"></i>
-            Email
+          {% endif %} {% if contact_info.email %}
+          <a href="mailto:{{ contact_info.email }}">
+            <i class="bi bi-envelope"></i> Email
           </a>
+          {% endif %}
         </div>
+
         <div class="copyright">
           <p>
             &copy; <span id="current-year"></span> Victor O. All rights
