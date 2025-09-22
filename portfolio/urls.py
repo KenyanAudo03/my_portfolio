@@ -12,7 +12,6 @@ urlpatterns = [
     path("contact", include("contact.urls")),
     path("projects", include("projects.urls")),
     path("skills", include("skills.urls")),
-    path("testimonials", include("testimonials.urls")),
 ]
 
 if settings.DEBUG:
