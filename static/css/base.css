@@ -80,6 +80,13 @@
           box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
       }
 
+      .links li a.active {
+          background: #f43f5e;
+          color: white;
+          border-color: #f43f5e;
+          box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
+      }
+
       main {
           flex: 1;
           width: 100%;
