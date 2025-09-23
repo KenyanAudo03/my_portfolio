@@ -47,6 +47,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "contact.context_processors.contact_info",
+                "core.context_processors.homepage_hero",
             ],
         },
     },
