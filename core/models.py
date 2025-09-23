@@ -14,6 +14,10 @@ class HomepageHero(models.Model):
         upload_to="hero_backgrounds/",
         help_text="Background image for the hero section.",
     )
+    profile_image = models.ImageField(
+        upload_to="profile_image/",
+        help_text="Background image for the hero section.",
+    )
     is_active = models.BooleanField(
         default=True, help_text="Toggle this hero section on/off."
     )
