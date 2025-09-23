@@ -8,7 +8,7 @@ class HomepageHero(models.Model):
         max_length=200, help_text="Main title (e.g. 'Hi, I’m John Doe')."
     )
     subtitle = models.CharField(
-        max_length=200, help_text="Subtitle or role (e.g. 'Full-Stack Developer')."
+        max_length=500, help_text="Subtitle or role (e.g. 'Full-Stack Developer')."
     )
     background_image = models.ImageField(
         upload_to="hero_backgrounds/",
