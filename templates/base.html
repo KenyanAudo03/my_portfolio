@@ -14,11 +14,36 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
+    <div class="sidebar-overlay"></div>
+
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">Victor O</div>
+        <button class="sidebar-close">
+          <i class="bx bx-x"></i>
+        </button>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
     <header>
       <div class="logo"></div>
       <div class="links">
@@ -37,8 +62,13 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
+      <button class="mobile-menu-toggle">
+        <i class="bi bi-list"></i>
+      </button>
     </header>
+
     <main>{% block content %} {% endblock %}</main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-description">
@@ -94,9 +124,7 @@
         </div>
       </div>
     </footer>
-    <script>
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
-    </script>
+
+    <script src="{% static 'js/base.js' %}"></script>
   </body>
 </html>
